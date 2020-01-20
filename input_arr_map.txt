@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+#include <cmath>
+#include <cstring>
+#include <string>
+#include <map>
+#include <set>
+#include <stack>
+#include <list>
+#include <vector>
+#include <queue>
+#include <deque>
+#include <ctype.h>
+#include<bits/stdc++.h>
+using namespace std;
+
+#define PI acos(-1)
+#define MP make_pair
+#define PB push_back
+#define VI vector <int>
+#define PII pair <int, int>
+#define LL long long
+#define SET(v,i) memset(v, i, sizeof(v))
+#define FOR(i,a,b) for (int i = (a); i <= (b); i++)
+#define FORD(i,a,b) for (int i = (a); i >= (b); i--)
+#define FORN(i,a,b) for (int i = (a); i < (b); i++)
+#define DOWN(i,b) for (int i = 0; i > (b); i--)
+#define FIT(it,v) for (typeof(v.begin()) it = v.begin(); it != v.end(); it++)
+#define FITD(it,v) for (typeof(v.rbegin()) it = v.rbegin(); it != v.rend(); it++)
+#define FREOPEN freopen("a.in", "r", stdin); freopen("a.out", "w", stdout)
+
+long long const mod = 1000000007;
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n;
+        long long int arr,k;
+        cin>>n>>k;
+        bool temp=false;
+        unordered_map<long long int,bool> ans; 
+        int i;
+        FORN(i,0,n)
+        {
+            cin>>arr;
+            if(ans[k-arr])
+            temp=true;
+            ans[arr]=true;
+        }
+        if(temp)
+        cout<<"Yes"<<endl;
+        else
+        cout<<"No"<<endl;
+    }
+    return 0;
+}

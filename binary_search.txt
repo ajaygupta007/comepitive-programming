@@ -1,0 +1,13 @@
+while(low<=high)
+        {
+            mid=(low+high)/2;
+            if(temp[mid]==find)
+            {
+                index=mid;
+                break;
+            }
+            else if(temp[mid]>find)
+            high=mid-1;
+            else
+            low=mid+1;
+        }

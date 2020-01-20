@@ -1,0 +1,16 @@
+int prime[1000002]={0},i,j;
+	
+vector<int> sieve;
+	
+for(i=2;i<=sqrt(1000000);i++)
+	
+if(prime[i]==0)
+	
+for(j=i*i;j<=1000000;j+=i)
+
+prime[j]=1;
+	for(i=2;i<=1000000;i++)
+
+if(prime[i]==0)
+
+sieve.push_back(i);

@@ -1,0 +1,39 @@
+                                           BUBBLE SORT
+#include<iostram>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int n,j,i;
+cout<<"enter number of element in array"<<endl;
+cin>>n;
+int arr[10000];
+cout<<"enter array elements"<<endl;
+for(i=0;i<n;i++)
+cin>>arr[i];
+for (i = 0; i < n-1; i++)     
+  for (j = 0; j < n-i-1; j++) 
+{ 
+        if (arr[j] > arr[j+1])  
+        {
+          int temp=arr[j];
+        arr[j]=arr[j+1];
+        arr[j+1]=temp; 
+        }
+}
+cout<<"sorted array is :"<<endl;  
+for(i=0;i<n;i++)
+cout<<arr[i]<<" ";
+return 0;
+}
+
+
+
+INPUT:
+enter number of element in array 
+5
+enter array elements
+5 70  17 18 1
+OUTPUT:
+sorted array is
+1 5 17 18 78 

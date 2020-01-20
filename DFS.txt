@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> adj[100005];
+bool visited[100005];
+long nodes;
+
+void DFS(int n)
+{
+    visited[n] = true;
+    for(vector<int>::iterator i = adj[n].begin(); i != adj[n].end() ; i++)
+    {
+        if(!visited[*i])
+            DFS(*i);
+    }
+}
+
+
+int main()
+{
+    int T;
+    cin >> T;
+   for(int k=1;k<=T;k++)
+    {
+        int N,M,cost=0,a,b;
+        cin >> N >> M;
+
+        for(int i = 0 ; i < M ; i++)
+        {
+            cin >> a >> b;
+            adj[a].push_back(b);
+            adj[b].push_back(a);
+        }
+        for(int i = 1 ; i <= N ; i++)
+        {
+            if(!visited[i])
+            {
+                cost++;
+                DFS(i);
+            }
+        }
+        cout << "Case #" << k << ": ";
+        cout << (cost-1)*2+(N-cost)<< endl;
+        for(int i=0 ; i<=N ; i++)
+        {
+            adj[i].clear();
+            visited[i] = false;
+        }
+    }
+
+    return 0;
+}
